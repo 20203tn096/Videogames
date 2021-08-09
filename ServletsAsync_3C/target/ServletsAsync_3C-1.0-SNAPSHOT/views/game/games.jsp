@@ -22,6 +22,7 @@
         <thead class="table-dark">
         <th>No.</th>
         <th>Nombre del videojuego</th>
+        <th>Imagen del juego</th>
         <th>Fecha de estreno</th>
         <th>Categoria</th>
         <th>Estado</th>
