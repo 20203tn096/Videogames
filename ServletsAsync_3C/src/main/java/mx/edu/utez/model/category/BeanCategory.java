@@ -2,7 +2,7 @@ package mx.edu.utez.model.category;
 
 public class BeanCategory {
     private int idCategory;
-    private String name;
+    private String nameCategory;
     private int status;
 
     public BeanCategory() {
@@ -10,7 +10,7 @@ public class BeanCategory {
 
     public BeanCategory(int idCategory, String name, int status) {
         this.idCategory = idCategory;
-        this.name = name;
+        this.nameCategory = name;
         this.status = status;
     }
 
@@ -22,12 +22,12 @@ public class BeanCategory {
         this.idCategory = idCategory;
     }
 
-    public String getName() {
-        return name;
+    public String getNameCategory() {
+        return nameCategory;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNameCategory(String nameCategory) {
+        this.nameCategory = nameCategory;
     }
 
     public int getStatus() {
