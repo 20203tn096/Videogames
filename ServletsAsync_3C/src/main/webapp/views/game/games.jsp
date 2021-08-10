@@ -18,7 +18,7 @@
 <body onload="findGames();">
 <div id="content">
     <br>
-    <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#create"><i class="fas fa-trash"></i> Agregar Videojuego</button>
+    <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#create"><i class="fas fa-plus"></i> Agregar Videojuego</button>
     <br>
     <table class="table">
         <thead class="table-dark">
