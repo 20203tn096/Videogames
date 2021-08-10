@@ -25,3 +25,27 @@ function findGames(){
 }
 
 
+function createGame(){
+    let name = document.getElementById("name").value;
+    let image = document.getElementById("image").value;
+    let date = document.getElementById("date").value;
+    let category = document.getElementById("category").value;
+
+    $.ajax({
+        type: 'POST',
+        url: 'http://localhost:8080/ServletsAsync_3C_war/createGames',
+        data: {
+            action: 'create',
+            name: name,
+            image: image,
+            date: date,
+            idCategory: category
+        }
+    }).done(function(res){
+        console.log(res);
+        let message = res.message;
+        alert(message);
+        findGames();
+    });
+}
+

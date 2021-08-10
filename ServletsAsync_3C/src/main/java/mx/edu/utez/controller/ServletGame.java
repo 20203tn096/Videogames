@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
@@ -41,11 +42,9 @@ public class ServletGame extends HttpServlet {
             case "create":
                 Part part = request.getPart("image");
                 InputStream image = part.getInputStream();
-
-                beanCategory.setIdCategory(Integer.parseInt(request.getParameter("idCategory")));
-
                 beanGames.setName(request.getParameter("name"));
                 beanGames.setDatePremiere(request.getParameter("date"));
+                beanCategory.setIdCategory(Integer.parseInt(request.getParameter("category")));
                 beanGames.setCategory_idCategory(beanCategory);
                 boolean flag = daoGames.create(beanGames, image);
 
