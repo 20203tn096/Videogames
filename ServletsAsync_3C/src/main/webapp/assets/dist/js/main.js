@@ -39,6 +39,10 @@ function createGame(){
         processData: false,
         data: data
     }).done(function(res){
+        document.getElementById("name").value="";
+        document.getElementById("date").value="";
+        document.getElementById("image").value="";
+        document.getElementById("category").value="";
         findGames();
     });
 }
