@@ -26,27 +26,19 @@ function findGames(){
 
 
 function createGame(){
-    alert("entro")
-    var image = document.getElementById("image").files[0].size;
-    alert(image);
-    let name = document.getElementById("name").value;
-    let date = document.getElementById("date").value;
-    let category = document.getElementById("category").value;
-
+    let data = new FormData();
+    data.append('action','create');
+    data.append('name',document.getElementById("name").value);
+    data.append('date',document.getElementById("date").value);
+    data.append('image',document.getElementById("image").files[0]);
+    data.append('category',document.getElementById("category").value);
     $.ajax({
         type: 'POST',
         url: 'http://localhost:8080/ServletsAsync_3C_war/createGames',
-        data: {
-            action: 'create',
-            name: name,
-            image: image,
-            date: date,
-            idCategory: category
-        }
+        contentType: false,
+        processData: false,
+        data: data
     }).done(function(res){
-        console.log(res);
-        let message = res.message;
-        alert(message);
         findGames();
     });
 }

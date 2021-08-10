@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-08-2021 a las 23:14:01
+-- Tiempo de generación: 11-08-2021 a las 01:34:09
 -- Versión del servidor: 10.4.19-MariaDB
 -- Versión de PHP: 8.0.7
 
@@ -26,7 +26,7 @@ DELIMITER $$
 -- Procedimientos
 --
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_create` (IN `p_name` VARCHAR(120), IN `p_imgGame` LONGBLOB, IN `p_datePremiere` DATE, IN `p_Category_idCategory` INT)  BEGIN
- INSERT INTO games(name, img_game, date_premiere, Category_idCategory,status) VALUES (p_name,p_imgGame,p_datePremiere,p_Category_idCategory,1);
+ INSERT INTO games(name, img_game, date_premiere, Category_idCategory,statusGame) VALUES (p_name,p_imgGame,p_datePremiere,p_Category_idCategory,1);
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_delete` (`p_idGames` INT)  BEGIN
@@ -154,7 +154,7 @@ ALTER TABLE `categoria`
 -- AUTO_INCREMENT de la tabla `games`
 --
 ALTER TABLE `games`
-  MODIFY `idGames` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `idGames` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `user`
